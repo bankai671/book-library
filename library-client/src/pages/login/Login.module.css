@@ -1,0 +1,84 @@
+.container {
+  max-width: 1400px;
+  height: calc(100vh - 80px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "EB Garamond", serif;
+    color: #ececec;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding: 20px;
+
+    .inputWrapper {
+      display: flex;
+      flex-direction: column;
+
+      .input {
+        width: 100%;
+        padding: 6px 8px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: serif;
+      }
+      .errorField {
+        color: lightcoral;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: serif;
+      }
+    }
+  
+    .btn {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 6px 8px;
+      background-color: royalblue;
+      color: #ececec;
+      border-radius: 2px;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: serif;
+      align-self: center;
+  
+      &:hover {
+        background-color: rgb(54, 86, 180);
+        color: #ffffff;
+        cursor: pointer;
+      }
+      &:focus-visible {
+        background-color: rgb(54, 86, 180);
+        color: #ffffff;
+      }
+  
+      &:active {
+        background-color: royalblue;
+      }
+    }
+  }
+
+  .loginLink {
+    color: #ececec;
+    text-decoration: none;
+    font-size: 16px;
+    &:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+}

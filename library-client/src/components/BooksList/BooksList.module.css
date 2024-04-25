@@ -1,0 +1,41 @@
+.items {
+    background-color: #252525;
+    height: 100%;
+    border-radius: 2px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    color: #fff;
+    .item {
+        background-color: #525050;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+
+        .img {
+            height: 100%;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        &:active {
+            transform: scale(1);
+        }
+        .info {
+            .bookName {
+                color: #fff;
+                text-decoration: none;
+            }
+
+        }
+    }
+}

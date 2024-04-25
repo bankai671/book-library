@@ -1,0 +1,117 @@
+.container {
+    max-width: 1400px;
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 2rem;
+        padding: 20px;
+
+        .imageInputWrapper {
+            display: flex;
+            align-items: center;
+            gap: 3.2rem;
+        }
+        .bookInputWrapper {
+            display: flex;
+            align-items: center;
+            gap: 3.2rem;
+        }
+
+        .inputGroup {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+
+            .inputWrapper {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                .input {
+                    width: 100%;
+                    padding: 6px 8px;
+                    border-radius: 2px;
+                    outline: none;
+                    border: none;
+                    font-size: 20px;
+                    font-weight: 400;
+                    font-family: serif;
+                }
+                .errorField {
+                    color: lightcoral;
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: serif;
+                    position: absolute;
+                    bottom: 0;
+                    top: 100%;
+                }
+            }
+        }
+        .inputWrapper {
+            width: 100%;
+            display: flex;
+            position: relative;
+
+            .input {
+                width: 100%;
+                padding: 6px 8px;
+                border-radius: 2px;
+                outline: none;
+                border: none;
+                font-size: 20px;
+                font-weight: 400;
+                font-family: serif;
+            }
+            .errorField {
+                color: lightcoral;
+                font-size: 16px;
+                font-weight: 400;
+                font-family: serif;
+                position: absolute;
+                bottom: 0;
+                top: 100%;
+            }
+            .textarea {
+                resize: none;
+                height: 160px;
+            }
+        }
+
+        .btn {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 6px 8px;
+            background-color: royalblue;
+            color: #ececec;
+            border-radius: 2px;
+            font-size: 20px;
+            font-weight: 400;
+            font-family: serif;
+            align-self: center;
+
+            &:hover {
+                background-color: rgb(54, 86, 180);
+                color: #ffffff;
+                cursor: pointer;
+            }
+            &:focus-visible {
+                background-color: rgb(54, 86, 180);
+                color: #ffffff;
+            }
+
+            &:active {
+                background-color: royalblue;
+            }
+        }
+    }
+}
