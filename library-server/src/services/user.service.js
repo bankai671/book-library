@@ -136,7 +136,9 @@ class UserService {
                         author: '$bookDetails.author',
                         genre: '$bookDetails.genre',
                         publishingYear: '$bookDetails.publishingYear',
-                        description: '$bookDetails.description'
+                        description: '$bookDetails.description',
+                        imagePath: '$bookDetails.imagePath',
+                        bookPath: '$bookDetails.bookPath'
                     }
                 },
                 { $match: searchQuery }
