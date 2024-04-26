@@ -38,14 +38,6 @@ export const BookItem = () => {
         setIsLoading(false);
     };
 
-    const onOpenBookClick = async () => {
-        setIsLoading(true);
-        if (currentBook.bookPath) {
-            setIsLoading(false);
-            // navigate('/read-book');
-        }
-    };
-
     const fetchBook = async () => {
         setIsLoading(true);
         const response = await api.get(`/book/${bookId}`);
@@ -125,12 +117,7 @@ export const BookItem = () => {
                                 </button>
                             )}
                             {currentBook?.bookPath && (
-                                <Link
-                                    to='/read-book'
-                                    target='_blank'
-                                    className={styles.btn}
-                                    onClick={onOpenBookClick}
-                                >
+                                <Link to='/read-book' target='_blank' className={styles.btn}>
                                     Open
                                 </Link>
                             )}

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 import { bookCreateValidationSchema } from './bookCreateValidationSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -15,6 +17,8 @@ export const Dashboard = () => {
     const [selectedImageFile, setSelectedImageFile] = useState(null);
     const [selectedBookFile, setSelectedBookFile] = useState(null);
 
+    const { isAuth, user } = useSelector((state) => state.authReducer);
+
     const {
         register,
         handleSubmit,
@@ -24,6 +28,7 @@ export const Dashboard = () => {
     } = useForm({
         resolver: yupResolver(bookCreateValidationSchema),
     });
+    const navigate = useNavigate();
 
     const formSubmitHandler = async () => {
         setIsLoading(true);
@@ -73,6 +78,12 @@ export const Dashboard = () => {
     };
 
     useEffect(() => {
+        if (!isAuth || user.role !== 'admin') {
+            navigate('/login');
+        }
+    }, []);
+
+    useEffect(() => {
         console.log(selectedBookFile);
         console.log(selectedImageFile);
         console.log(getValues());
@@ -96,18 +107,18 @@ export const Dashboard = () => {
                             className={styles.fileInput}
                             name='imageFile'
                         />
-                        <p>Image uploader</p>
+                        <p>Image uploader (most image formats support)</p>
                     </div>
                     <div className={styles.bookInputWrapper}>
                         <input
                             type='file'
                             multiple={false}
-                            accept='.doc,.docx,.pdf'
+                            accept='.pdf'
                             onChange={bookFileChangeHandler}
                             className={styles.fileInput}
                             name='bookFile'
                         />
-                        <p>Book uploader</p>
+                        <p>Book uploader (only pdf format supported)</p>
                     </div>
                     <div className={styles.inputGroup}>
                         <div className={styles.inputWrapper}>

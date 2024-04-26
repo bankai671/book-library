@@ -17,12 +17,12 @@ export const Favourites = () => {
         resolver: yupResolver(searchValidationSchema),
     });
     const navigate = useNavigate();
-    const { isAuth, user } = useSelector((state) => state.authReducer);
-
     const [currentPage, setCurrentPage] = useState(1);
     const [fetchedFavouriteBooks, setFetchedFavouriteBooks] = useState([]);
     const [isSearched, setIsSearched] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+
+    const { isAuth, user } = useSelector((state) => state.authReducer);
 
     const postPerPage = 12;
     const indexOfLastPost = currentPage * postPerPage;

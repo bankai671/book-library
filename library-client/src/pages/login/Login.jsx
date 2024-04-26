@@ -97,6 +97,9 @@ export const Login = () => {
                 <Link to='/register' className={styles.loginLink}>
                     I don&apos;t have account
                 </Link>
+                <Link to='/' className={styles.loginLink}>
+                    I just want look around
+                </Link>
             </div>
         </>
     );

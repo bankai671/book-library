@@ -1,7 +1,7 @@
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const redisClient = require('../../redis_connect.js');
-const mongoose = require('mongoose');
 
 const generateError = require('../utils/generateError.js');
 

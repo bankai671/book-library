@@ -8,5 +8,6 @@ module.exports = {
     JWT_REFRESH_TIME: process.env.JWT_REFRESH_TIME,
     REDIS_HOST: process.env.REDIS_HOST,
     REDIS_PORT: process.env.REDIS_PORT,
+    MONGO_URL:  process.env.MONGO_URL,
 };
 
