@@ -23,8 +23,7 @@ class UserController {
     static async logout(req, res) {
         try {
             const { userId } = req.currentUser;
-            const token = req.token;
-            await UserService.logout(userId, token);
+            await UserService.logout(userId);
             res.status(200).json({ message: 'Logout successful' });
         } catch (error) {
             res.status(500).json({ message: error.message });
